@@ -1,0 +1,58 @@
+# IMPORTANT! before executing this file pleas manualy create a namespace bestrong or run 
+# kubectl apply -f k8s/namespace.yaml
+
+
+# To make service work propely you will need to port forwar port 8080 
+# For this you should use the following command: 
+# kubectl port-forward service/bestrong-api-svc -n bestrong 8080:8080 
+apiVersion: v1
+kind: Service
+metadata:
+  name: bestrong-api-svc
+  namespace: bestrong
+  labels:
+    app: asp-api
+spec:
+  selector:
+    app: asp-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+---
+# Before runing: minikube image load <your name or what ever you want>/api-asp:latest
+# Run: kubectl apply -f k8s/namespace.yaml and then
+# kubectl apply -f k8s
+# Or you can push this image to public image registry but then you may want to change it name under the comment below
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bestrong-api
+  namespace: bestrong
+  labels:
+    app: asp-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: asp-api
+  template:
+    metadata:
+      labels:
+        app: asp-api
+    spec:
+      containers:
+      - name: aps-api
+        # Container name if you chouse to use anything other then maksymperehinets/api-asp:latest
+        # pleas change it below
+        image: maksymperehinets/api-asp:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

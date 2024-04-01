@@ -1,0 +1,8 @@
+# Simply creates namespace called bestrong to use it run 
+# kubectl apply -f k8s/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bestrong
+  labels:
+    name: dev
