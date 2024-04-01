@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-01T20:34:56.628Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="fbtn8gI4ROyIdP1jtyML" version="24.2.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-01T20:36:59.436Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0" etag="Lb0Scd_TFxWprjk2vUjx" version="24.2.0" type="github">
   <diagram name="Page-1" id="8otom-SP08k95fFq9ZEd">
-    <mxGraphModel dx="194914" dy="1754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="192000" pageHeight="108000" math="0" shadow="0">
+    <mxGraphModel dx="193200" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="192000" pageHeight="108000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="AnmqnCVV4k-eHqJuKPqF-7" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
           <mxGeometry x="330" y="270" width="280" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="AnmqnCVV4k-eHqJuKPqF-8" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+        <mxCell id="AnmqnCVV4k-eHqJuKPqF-8" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="660" y="180" width="660" height="640" as="geometry" />
         </mxCell>
         <mxCell id="AnmqnCVV4k-eHqJuKPqF-9" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Subnet.svg;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
@@ -37,7 +37,7 @@
         <mxCell id="AnmqnCVV4k-eHqJuKPqF-22" value="Azure Kubernetes service subnet" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=32;movable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
           <mxGeometry x="745" y="180" width="490" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="AnmqnCVV4k-eHqJuKPqF-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#333333;strokeColor=#666666;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
+        <mxCell id="AnmqnCVV4k-eHqJuKPqF-25" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;fontColor=#333333;strokeColor=#666666;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="680" y="230" width="620" height="580" as="geometry" />
         </mxCell>
         <mxCell id="AnmqnCVV4k-eHqJuKPqF-23" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/containers/Kubernetes_Services.svg;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="1">
