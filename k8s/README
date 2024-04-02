@@ -1,72 +1,61 @@
 ---
+#To start this cluster localy pleas follow next instruction
 
-## Setting Up a Local Kubernetes Cluster with Minikube
+#First install kubectl (Follow next instruction only if you don't have kubectl and kubeadm iinstalled v1.29) 
 
-### Installing kubectl and kubeadm (v1.29)
+#Linux instaletion guide (Debian)
 
-#### Linux (Debian)
+#Install apt-transport-https, ca-certificates and curl
+```console
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
+```
 
-1. Install required packages:
-   ```bash
-   sudo apt-get update
-   sudo apt-get install -y apt-transport-https ca-certificates curl
-   ```
+#Install public sign key for k8s
+```console
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+```
 
-2. Add the Kubernetes repository signing key:
-   ```bash
-   curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-   ```
+#Add k8s repo to your sources.list.d
+```console
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
 
-3. Add the Kubernetes repository:
-   ```bash
-   echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
-   ```
+#Then you can install kubectl kubeadm
+```console
+sudo apt-get update
+sudo apt-get install -y kubectl kubeadm
+```
 
-4. Update and install kubectl and kubeadm:
-   ```bash
-   sudo apt-get update
-   sudo apt-get install -y kubectl kubeadm
-   ```
+#After that you are ready to install minikube 
 
-### Installing Minikube
+#Download minikube binary for Debian
+```console
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+```
 
-1. Download the Minikube binary for Debian:
-   ```bash
-   curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-   ```
+#Then install it 
+```console
+sudo dpkg -i minikube_latest_amd64.deb
+```
 
-2. Install Minikube:
-   ```bash
-   sudo dpkg -i minikube_latest_amd64.deb
-   ```
+#To start up your local k8s cluster 
+```console
+minikube start
+```
+#After that add node 
+```console
+minikube node add
+```
 
-### Starting the Local Kubernetes Cluster
+#Now you can start testing it in local env
+```console
+minikube image load <your name or what ever you want>/api-asp:latest
+```
 
-1. Start Minikube:
-   ```bash
-   minikube start
-   ```
-
-2. Add a node to the cluster:
-   ```bash
-   minikube node add
-   ```
-
-### Testing in Local Environment
-
-1. Load your Docker image into Minikube:
-   ```bash
-   minikube image load <your_image_name>/api-asp:latest
-   ```
-
-2. Expose your service:
-   ```bash
-   kubectl port-forward -n bestrong service/bestrong-api-svc <local_port>:8080
-   ```
-
-   For example, to use port 8080 locally:
-   ```bash
-   kubectl port-forward -n bestrong service/bestrong-api-svc 8080:8080
-   ```
-
-Now you can test and interact with your Kubernetes cluster running locally using Minikube.
+#To expouse your service use 
+```console
+kubectl port-forward -n bestrong service/bestrong-api-svc <8080 or any port ypu want>:8080
+#or 
+for port 8080 use kubectl port-forward -n bestrong service/bestrong-api-svc 8080:8080
+```
